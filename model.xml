@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="Robot">
+			<or abstract="true" mandatory="true" name="Movement">
+				<graphics key="collapsed" value="false"/>
+				<feature name="WaveSurfing"/>
+				<feature name="GFTmove"/>
+			</or>
+			<and abstract="true" name="Targeting">
+				<feature mandatory="true" name="GuessFactor"/>
+			</and>
+			<and abstract="true" name="Debugging">
+				<feature mandatory="true" name="PaintWaves"/>
+			</and>
+			<and abstract="true" mandatory="true" name="Radar">
+				<feature mandatory="true" name="ConstantRotation"/>
+			</and>
+			<and abstract="true" name="Statistics">
+				<feature name="SurfingData"/>
+				<feature name="GFTargetingData"/>
+			</and>
+			<feature name="Coloring"/>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+			<imp>
+				<var>PaintWaves</var>
+				<var>WaveSurfing</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>SurfingData</var>
+				<var>WaveSurfing</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>WaveSurfing</var>
+				<var>SurfingData</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>GuessFactor</var>
+				<var>GFTargetingData</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>GFTargetingData</var>
+				<var>GuessFactor</var>
+			</imp>
+		</rule>
+	</constraints>
+</featureModel>

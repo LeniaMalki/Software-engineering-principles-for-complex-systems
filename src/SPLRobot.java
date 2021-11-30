@@ -11,7 +11,34 @@ public class SPLRobot extends AdvancedRobot{
 	private IMovement movement;
 	private ITargeting targeting;
 
+
 	
+
+	// #if GuessFactor && GFTargetingData
+	private static final double BULLET_POWER = 1.9;
+
+	private static double lateralDirection;
+	private static double lastEnemyVelocity;
+	// #endif
+	
+	/*
+	public SPLRobot(boolean GFTmovement, boolean waveSurfing, boolean linearTargeting, boolean guessFactorTargeting) {
+		if (GFTmovement){
+				this.movement= new GFTmovement();
+		}
+		if (waveSurfing){
+			this.movement= new WaveSurfing();
+		}
+		if (linearTargeting){
+			this.targeting= new LinearTargeting();
+		}
+		if (guessFactorTargeting){
+			this.targeting= new GuessFactorTargeting() ;
+		}
+	}
+	*/
+
+
 
 	public void run() {
 

@@ -9,7 +9,7 @@ import java.util.ArrayList; // for collection of waves
 public class SPLRobot extends AdvancedRobot{
 	
 	private IMovement movement;
-
+    private ITargeting targeting;
 	
 
 	// #if GuessFactor && GFTargetingData
@@ -18,7 +18,23 @@ public class SPLRobot extends AdvancedRobot{
 	private static double lateralDirection;
 	private static double lastEnemyVelocity;
 	// #endif
-
+	
+	/*
+	public SPLRobot(boolean GFTmovement, boolean waveSurfing, boolean linearTargeting, boolean guessFactorTargeting) {
+		if (GFTmovement){
+				this.movement= new GFTmovement();
+		}
+		if (waveSurfing){
+			this.movement= new WaveSurfing();
+		}
+		if (linearTargeting){
+			this.targeting= new LinearTargeting();
+		}
+		if (guessFactorTargeting){
+			this.targeting= new GuessFactorTargeting() ;
+		}
+	}
+	*/
 
 
 	public void run() {

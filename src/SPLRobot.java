@@ -10,6 +10,8 @@ public class SPLRobot extends AdvancedRobot{
 	
 	private IMovement movement;
 	private ITargeting targeting;
+	private ConstantRotation radar;
+	private ColorRobot color;
 
 
 	
@@ -42,22 +44,12 @@ public class SPLRobot extends AdvancedRobot{
 
 	public void run() {
 
-		// #if Coloring
-//@	    	setColors(Color.BLUE, Color.BLACK, Color.YELLOW); 
-		// #endif
-
+		
+		color.run();
 		targeting.run();
 		movement.run();
+		radar.run();
 
-		// #if ConstantRotation
-		setAdjustGunForRobotTurn(true);
-		setAdjustRadarForGunTurn(true);
-
-		do {
-			// basic mini-radar code
-			turnRadarRightRadians(Double.POSITIVE_INFINITY);
-		} while (true);
-		// #endif
 	}
 
 	public void onScannedRobot(ScannedRobotEvent e) {

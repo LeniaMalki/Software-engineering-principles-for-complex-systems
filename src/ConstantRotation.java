@@ -1,9 +1,8 @@
 import robocode.AdvancedRobot;
 
 public class ConstantRotation{
-	private AdvancedRobot robot;
-	
-	public void run() {
+ 	
+	public void run(AdvancedRobot robot) {
 
 		robot.setAdjustGunForRobotTurn(true);
 	    robot.setAdjustRadarForGunTurn(true);

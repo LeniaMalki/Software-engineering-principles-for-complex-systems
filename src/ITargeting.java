@@ -1,3 +1,4 @@
+import robocode.AdvancedRobot;
 import robocode.ScannedRobotEvent;
 
 /**
@@ -5,7 +6,7 @@ import robocode.ScannedRobotEvent;
  */
 public interface ITargeting {
 	
-	void onScannedRobotTarget(ScannedRobotEvent e);
+	void onScannedRobotTarget(ScannedRobotEvent e, AdvancedRobot robot);
 	void run();
 
 }

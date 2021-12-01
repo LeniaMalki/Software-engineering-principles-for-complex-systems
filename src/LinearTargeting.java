@@ -6,10 +6,8 @@ import robocode.ScannedRobotEvent;
 
 public class LinearTargeting implements ITargeting{
 	 
-	private AdvancedRobot robot; 
-
 	@Override
-	public void onScannedRobotTarget(ScannedRobotEvent e) {
+	public void onScannedRobotTarget(ScannedRobotEvent e, AdvancedRobot robot) {
 		double bulletPower = Math.min(3.0,robot.getEnergy());
 		double myX = robot.getX();
 		double myY = robot.getY();

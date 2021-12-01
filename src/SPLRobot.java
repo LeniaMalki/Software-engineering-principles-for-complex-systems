@@ -44,17 +44,17 @@ public class SPLRobot extends AdvancedRobot{
 	public void run() {
 
 		
-		color.run();
+		color.run(this);
 		targeting.run();
 		movement.run();
-		radar.run();
+		radar.run(this);
 
 	}
 
 	public void onScannedRobot(ScannedRobotEvent e) {
 		
-		movement.onScannedRobotMove(e);
-		targeting.onScannedRobotTarget(e);
+		movement.onScannedRobotMove(e,this);
+		targeting.onScannedRobotTarget(e,this);
 		
 
 	}

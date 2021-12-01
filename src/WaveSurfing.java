@@ -11,9 +11,7 @@ import robocode.util.Utils;
  * TODO description
  */
 public class WaveSurfing implements IMovement {
-	
-	private AdvancedRobot robot;
-	
+		
 	public static int BINS = 47;
 	public static double _surfStats[] = new double[BINS]; // we'll use 47 bins
 	public Point2D.Double _myLocation; // our bot's location
@@ -41,7 +39,7 @@ public class WaveSurfing implements IMovement {
 		_surfAbsBearings = new ArrayList();
 	}
 	
-	public void onScannedRobotMove(ScannedRobotEvent e) {
+	public void onScannedRobotMove(ScannedRobotEvent e, AdvancedRobot robot) {
 		
 		_myLocation = new Point2D.Double(robot.getX(), robot.getY());
 
@@ -73,12 +71,12 @@ public class WaveSurfing implements IMovement {
 		// enemy location as the source of the wave
 		_enemyLocation = project(_myLocation, absBearing, e.getDistance());
 
-		updateWaves();
-		doSurfing();
+		updateWaves(robot);
+		doSurfing(robot);
 		
 	}
 	
-	public void updateWaves() {
+	public void updateWaves(AdvancedRobot robot) {
 		for (int x = 0; x < _enemyWaves.size(); x++) {
 			EnemyWave ew = (EnemyWave) _enemyWaves.get(x);
 
@@ -157,7 +155,7 @@ public class WaveSurfing implements IMovement {
 			}
 		}
 		
-		public Point2D.Double predictPosition(EnemyWave surfWave, int direction) {
+		public Point2D.Double predictPosition(EnemyWave surfWave, int direction, AdvancedRobot robot) {
 			Point2D.Double predictedPosition = (Point2D.Double) _myLocation.clone();
 			double predictedVelocity = robot.getVelocity();
 			double predictedHeading = robot.getHeadingRadians();
@@ -203,21 +201,21 @@ public class WaveSurfing implements IMovement {
 			return predictedPosition;
 		}
 
-		public double checkDanger(EnemyWave surfWave, int direction) {
-			int index = getFactorIndex(surfWave, predictPosition(surfWave, direction));
+		public double checkDanger(EnemyWave surfWave, int direction, AdvancedRobot robot) {
+			int index = getFactorIndex(surfWave, predictPosition(surfWave, direction,robot));
 
 			return _surfStats[index];
 		}
 
-		public void doSurfing() {
+		public void doSurfing(AdvancedRobot robot) {
 			EnemyWave surfWave = getClosestSurfableWave();
 
 			if (surfWave == null) {
 				return;
 			}
 
-			double dangerLeft = checkDanger(surfWave, -1);
-			double dangerRight = checkDanger(surfWave, 1);
+			double dangerLeft = checkDanger(surfWave, -1,robot);
+			double dangerRight = checkDanger(surfWave, 1,robot);
 
 			double goAngle = absoluteBearing(surfWave.fireLocation, _myLocation);
 			if (dangerLeft < dangerRight) {

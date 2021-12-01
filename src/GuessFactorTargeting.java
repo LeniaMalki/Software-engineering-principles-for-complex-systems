@@ -10,15 +10,13 @@ import robocode.util.Utils;
  */
 public class GuessFactorTargeting implements ITargeting {
 	
-	private AdvancedRobot robot;
-	
 	private static final double BULLET_POWER = 1.9;
 
 	private static double lateralDirection;
 	private static double lastEnemyVelocity;
 
 	
-	public void onScannedRobotTarget(ScannedRobotEvent e) {
+	public void onScannedRobotTarget(ScannedRobotEvent e,AdvancedRobot robot) {
 		double enemyAbsoluteBearing = robot.getHeadingRadians() + e.getBearingRadians();
 		double enemyDistance = e.getDistance();
 		double enemyVelocity = e.getVelocity();
@@ -72,10 +70,10 @@ class GFTWave extends Condition {
 	private static int[][][][] statBuffers = new int[DISTANCE_INDEXES][VELOCITY_INDEXES][VELOCITY_INDEXES][BINS];
 
 	private int[] buffer;
-	private AdvancedRobot robot;
+	private AdvancedRobot robot;//TODO ta bort
 	private double distanceTraveled;
 
-	GFTWave(AdvancedRobot _robot) {
+	GFTWave(AdvancedRobot _robot) { //TODO ta bort
 		this.robot = _robot;
 	}
 

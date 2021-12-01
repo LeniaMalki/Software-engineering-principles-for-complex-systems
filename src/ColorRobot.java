@@ -3,9 +3,8 @@ import java.awt.Color;
 import robocode.AdvancedRobot;
 
 public class ColorRobot{
-	AdvancedRobot robot;
 	
-	public void run() {
+	public void run(AdvancedRobot robot) {
 		robot.setColors(Color.BLUE, Color.BLACK, Color.YELLOW);
 	}
 }

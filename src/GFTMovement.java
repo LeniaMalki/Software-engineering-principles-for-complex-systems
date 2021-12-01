@@ -17,17 +17,13 @@ public class GFTMovement implements IMovement{
 	private static final double DEFAULT_EVASION = 1.2;
 	private static final double WALL_BOUNCE_TUNER = 0.699484;
 
-	private AdvancedRobot robot;
 	private Rectangle2D fieldRectangle = new Rectangle2D.Double(WALL_MARGIN, WALL_MARGIN,
 			BATTLE_FIELD_WIDTH - WALL_MARGIN * 2, BATTLE_FIELD_HEIGHT - WALL_MARGIN * 2);
 	private double enemyFirePower = 3;
 	private double direction = 0.4;
 
-	GFTMovement(AdvancedRobot _robot) {
-		this.robot = _robot;
-	}
 
-	public void onScannedRobotMove(ScannedRobotEvent e) {
+	public void onScannedRobotMove(ScannedRobotEvent e,AdvancedRobot robot) {
 		double enemyAbsoluteBearing = robot.getHeadingRadians() + e.getBearingRadians();
 		double enemyDistance = e.getDistance();
 		Point2D robotLocation = new Point2D.Double(robot.getX(), robot.getY());

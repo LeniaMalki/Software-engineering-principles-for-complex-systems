@@ -1,3 +1,4 @@
+import robocode.AdvancedRobot;
 import robocode.ScannedRobotEvent;
 
 /**
@@ -5,7 +6,7 @@ import robocode.ScannedRobotEvent;
  */
 public interface IMovement {
 	
-	void onScannedRobotMove(ScannedRobotEvent e);
+	void onScannedRobotMove(ScannedRobotEvent e, AdvancedRobot robot);
 	void run();
 
 }

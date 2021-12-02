@@ -10,14 +10,15 @@
 	</properties>
 	<struct>
 		<and abstract="true" mandatory="true" name="Robot">
-			<or abstract="true" mandatory="true" name="Movement">
+			<alt abstract="true" mandatory="true" name="Movement">
 				<graphics key="collapsed" value="false"/>
 				<feature name="WaveSurfing"/>
 				<feature name="GFTmove"/>
-			</or>
-			<and abstract="true" name="Targeting">
-				<feature mandatory="true" name="GuessFactor"/>
-			</and>
+			</alt>
+			<alt abstract="true" name="Targeting">
+				<feature name="GuessFactor"/>
+				<feature name="LinearTargeting"/>
+			</alt>
 			<and abstract="true" name="Debugging">
 				<feature mandatory="true" name="PaintWaves"/>
 			</and>

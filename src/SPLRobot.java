@@ -18,21 +18,23 @@ public class SPLRobot extends AdvancedRobot {
 	public SPLRobot() {
 		ConfigurationManager c = ConfigurationManager.getInstance();
 
-		if (c.getProperty("GFTmovement")) {
+		if (c.getProperty("GFTmove")) {
 			this.movement = new GFTMovement();
 		}
 		if (c.getProperty("WaveSurfing")) {
 			this.movement = new WaveSurfing();
 		}
-		if (c.getProperty("linearTargeting")) {
+		if (c.getProperty("LinearTargeting")) {
 			this.targeting = new LinearTargeting();
 		}
-		if (c.getProperty("guessFactorTargeting")) {
+		if (c.getProperty("GuessFactor")) {
 			this.targeting = new GuessFactorTargeting();
 		}
-
-		if (c.getProperty("ColorRobot")) {
+		if (c.getProperty("Coloring")) {
 			this.color = new ColorRobot();
+		}
+		if (c.getProperty("ConstantRotation")) {
+			this.radar = new ConstantRotation();
 		}
 
 	}
@@ -51,7 +53,9 @@ public class SPLRobot extends AdvancedRobot {
 		if (color != null) {
 			color.run(this);
 		}
-		targeting.run();
+		
+		if (targeting != null)
+			targeting.run();
 		movement.run();
 		radar.run(this);
 
@@ -60,7 +64,8 @@ public class SPLRobot extends AdvancedRobot {
 	public void onScannedRobot(ScannedRobotEvent e) {
 
 		movement.onScannedRobotMove(e, this);
-		targeting.onScannedRobotTarget(e, this);
+		if (targeting != null)
+			targeting.onScannedRobotTarget(e, this);
 
 	}
 

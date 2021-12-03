@@ -68,6 +68,10 @@ public class SPLRobot extends AdvancedRobot {
 			targeting.onScannedRobotTarget(e, this);
 
 	}
+	
+	public void onHitByBulletEvent(HitByBulletEvent e) {
+		movement.onHitByBullet(e);
+	}
 
 	// #if PaintWaves && WaveSurfing
 	/*

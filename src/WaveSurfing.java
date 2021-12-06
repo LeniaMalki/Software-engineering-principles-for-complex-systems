@@ -3,6 +3,7 @@ import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 
 import robocode.AdvancedRobot;
+import robocode.CustomEvent;
 import robocode.HitByBulletEvent;
 import robocode.ScannedRobotEvent;
 import robocode.util.Utils;
@@ -33,7 +34,7 @@ public class WaveSurfing implements IMovement {
 	public static Rectangle2D.Double _fieldRect = new java.awt.geom.Rectangle2D.Double(18, 18, 764, 564);
 	public static double WALL_STICK = 160;
 	
-	public void run() {
+	public void run(AdvancedRobot robot) {
 		_enemyWaves = new ArrayList();
 		_surfDirections = new ArrayList();
 		_surfAbsBearings = new ArrayList();
@@ -291,6 +292,12 @@ public class WaveSurfing implements IMovement {
 				}
 				robot.setAhead(100);
 			}
+		}
+
+		@Override
+		public void onCustomEvent(CustomEvent e, AdvancedRobot robot) {
+			// TODO Auto-generated method stub
+			
 		}
 
 	

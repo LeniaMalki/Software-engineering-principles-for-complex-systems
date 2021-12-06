@@ -36,6 +36,9 @@ public class SPLRobot extends AdvancedRobot {
 		if (c.getProperty("ConstantRotation")) {
 			this.radar = new ConstantRotation();
 		}
+		if (c.getProperty("Trigger")) {
+			this.movement = new TriggerMovement();
+		}
 
 	}
 
@@ -54,9 +57,10 @@ public class SPLRobot extends AdvancedRobot {
 			color.run(this);
 		}
 		
-		if (targeting != null)
+		if (targeting != null) {
 			targeting.run();
-		movement.run();
+		}
+		movement.run(this);
 		radar.run(this);
 
 	}
@@ -64,13 +68,18 @@ public class SPLRobot extends AdvancedRobot {
 	public void onScannedRobot(ScannedRobotEvent e) {
 
 		movement.onScannedRobotMove(e, this);
-		if (targeting != null)
+		if (targeting != null) {
 			targeting.onScannedRobotTarget(e, this);
+		}
 
 	}
 	
 	public void onHitByBulletEvent(HitByBulletEvent e) {
 		movement.onHitByBullet(e);
+	}
+	
+	public void onCustomEvent(CustomEvent e) {
+		movement.onCustomEvent(e,this);
 	}
 
 	// #if PaintWaves && WaveSurfing

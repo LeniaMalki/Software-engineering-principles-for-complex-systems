@@ -14,6 +14,7 @@
 				<graphics key="collapsed" value="false"/>
 				<feature name="WaveSurfing"/>
 				<feature name="GFTmove"/>
+				<feature name="Trigger"/>
 			</alt>
 			<alt abstract="true" name="Targeting">
 				<feature name="GuessFactor"/>

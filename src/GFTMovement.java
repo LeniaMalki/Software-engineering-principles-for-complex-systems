@@ -2,6 +2,7 @@ import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 
 import robocode.AdvancedRobot;
+import robocode.CustomEvent;
 import robocode.HitByBulletEvent;
 import robocode.ScannedRobotEvent;
 
@@ -47,7 +48,7 @@ public class GFTMovement implements IMovement{
 	}
 
 	
-	public void run() {
+	public void run(AdvancedRobot robot) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -55,6 +56,13 @@ public class GFTMovement implements IMovement{
 
 	@Override
 	public void onHitByBullet(HitByBulletEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void onCustomEvent(CustomEvent e, AdvancedRobot robot) {
 		// TODO Auto-generated method stub
 		
 	}

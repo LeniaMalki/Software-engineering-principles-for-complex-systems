@@ -1,5 +1,6 @@
+package Targeting;
 import java.awt.geom.Point2D;
-
+import concrete.GFTUtils;
 import robocode.AdvancedRobot;
 import robocode.Condition;
 import robocode.ScannedRobotEvent;
@@ -14,6 +15,7 @@ public class GuessFactorTargeting implements ITargeting {
 
 	private static double lateralDirection;
 	private static double lastEnemyVelocity;
+	
 
 	
 	public void onScannedRobotTarget(ScannedRobotEvent e,AdvancedRobot robot) {
@@ -122,27 +124,4 @@ class GFTWave extends Condition {
 		return mostVisited;
 	}
 
-}
-
-class GFTUtils2 {
-	static double bulletVelocity(double power) {
-		return 20 - 3 * power;
-	}
-
-	static Point2D project(Point2D sourceLocation, double angle, double length) {
-		return new Point2D.Double(sourceLocation.getX() + Math.sin(angle) * length,
-				sourceLocation.getY() + Math.cos(angle) * length);
-	}
-
-	static double absoluteBearing(Point2D source, Point2D target) {
-		return Math.atan2(target.getX() - source.getX(), target.getY() - source.getY());
-	}
-
-	static int sign(double v) {
-		return v < 0 ? -1 : 1;
-	}
-
-	static int minMax(int v, int min, int max) {
-		return Math.max(min, Math.min(max, v));
-	}
 }

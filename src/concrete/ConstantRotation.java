@@ -1,3 +1,4 @@
+package concrete;
 import robocode.AdvancedRobot;
 
 public class ConstantRotation{

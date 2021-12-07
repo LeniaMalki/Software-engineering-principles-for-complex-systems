@@ -1,4 +1,6 @@
+package Targeting;
 import java.awt.geom.Point2D;
+
 import robocode.util.* ;
 
 import robocode.AdvancedRobot;

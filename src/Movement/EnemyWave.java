@@ -1,3 +1,4 @@
+package Movement;
 import java.awt.geom.Point2D;
 
 /**
@@ -8,7 +9,9 @@ public class EnemyWave {
 	long fireTime;
 	double bulletVelocity, directAngle, distanceTraveled;
 	int direction;
-
+	
+	
 	public EnemyWave() {
 	}
+	
 }

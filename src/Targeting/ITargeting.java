@@ -1,3 +1,4 @@
+package Targeting;
 import robocode.AdvancedRobot;
 import robocode.ScannedRobotEvent;
 

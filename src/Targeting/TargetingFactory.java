@@ -1,3 +1,4 @@
+package Targeting;
 import properties.ConfigurationManager;
 
 /**

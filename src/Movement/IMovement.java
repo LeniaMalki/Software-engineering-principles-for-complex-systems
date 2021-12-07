@@ -1,3 +1,4 @@
+package Movement;
 import robocode.AdvancedRobot;
 import robocode.CustomEvent;
 import robocode.HitByBulletEvent;

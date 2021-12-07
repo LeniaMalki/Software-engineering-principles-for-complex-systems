@@ -2,18 +2,18 @@
 <configuration>
 	<feature automatic="selected" name="Robot"/>
 	<feature automatic="selected" name="Movement"/>
-	<feature automatic="unselected" name="WaveSurfing"/>
+	<feature automatic="selected" manual="selected" name="WaveSurfing"/>
 	<feature automatic="unselected" name="GFTmove"/>
-	<feature manual="selected" name="Trigger"/>
+	<feature automatic="unselected" name="Trigger"/>
 	<feature name="Targeting"/>
 	<feature name="GuessFactor"/>
 	<feature name="LinearTargeting"/>
-	<feature automatic="unselected" name="Debugging"/>
-	<feature automatic="unselected" name="PaintWaves"/>
+	<feature manual="selected" name="Debugging"/>
+	<feature automatic="selected" name="PaintWaves"/>
 	<feature automatic="selected" name="Radar"/>
 	<feature automatic="selected" name="ConstantRotation"/>
-	<feature name="Statistics"/>
-	<feature automatic="unselected" name="SurfingData"/>
+	<feature automatic="selected" name="Statistics"/>
+	<feature automatic="selected" name="SurfingData"/>
 	<feature name="GFTargetingData"/>
-	<feature manual="selected" name="Coloring"/>
+	<feature name="Coloring"/>
 </configuration>

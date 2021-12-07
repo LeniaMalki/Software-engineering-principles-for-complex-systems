@@ -228,16 +228,6 @@ public class WaveSurfing implements IMovement {
 			setBackAsFront(robot, goAngle);
 		}
 
-		// This can be defined as an inner class if you want.
-		class EnemyWave {
-			Point2D.Double fireLocation;
-			long fireTime;
-			double bulletVelocity, directAngle, distanceTraveled;
-			int direction;
-
-			public EnemyWave() {
-			}
-		}
 
 		// CREDIT: Iterative WallSmoothing by Kawigi
 		// - return absolute angle to move at after account for WallSmoothing
@@ -307,3 +297,4 @@ public class WaveSurfing implements IMovement {
 	
 
 }
+

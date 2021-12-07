@@ -6,16 +6,6 @@ import java.util.ArrayList;
  * TODO description
  */
 public class Paint {
-	/*
-	private ArrayList _enemyWaves;
-	public Point2D.Double _myLocation;
-	
-	public Paint (ArrayList enemyWaves, Point2D.Double myLocation) {
-		this._enemyWaves = enemyWaves;
-		this._myLocation = myLocation;
-	}*/
-	
-	
 	
 	  public void onPaint(java.awt.Graphics2D g, ArrayList _enemyWaves, Point2D.Double _myLocation) { 
 		  g.setColor(java.awt.Color.red);

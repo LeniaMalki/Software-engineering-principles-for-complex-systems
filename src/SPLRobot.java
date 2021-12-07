@@ -18,19 +18,14 @@ public class SPLRobot extends AdvancedRobot {
 
 	public SPLRobot() {
 		ConfigurationManager c = ConfigurationManager.getInstance();
+		MovementFactory movementFactory = new MovementFactory();
+		TargetingFactory targetingFactory = new TargetingFactory();
+		
+		this.movement = movementFactory.getMovement();
+		this.targeting = targetingFactory.getTargeting();
 
-		if (c.getProperty("GFTmove")) {
-			this.movement = new GFTMovement();
-		}
-		if (c.getProperty("WaveSurfing")) {
-			this.movement = new WaveSurfing();
-		}
-		if (c.getProperty("LinearTargeting")) {
-			this.targeting = new LinearTargeting();
-		}
-		if (c.getProperty("GuessFactor")) {
-			this.targeting = new GuessFactorTargeting();
-		}
+		
+	
 		if (c.getProperty("Coloring")) {
 			this.color = new ColorRobot();
 		}
@@ -41,24 +36,11 @@ public class SPLRobot extends AdvancedRobot {
 			this.movement = new TriggerMovement();
 		}
 		if (c.getProperty("PaintWaves")) {
-			/*
-			if (movement.getClass() == WaveSurfing.class) {
-				WaveSurfing robotMovement = (WaveSurfing) movement;
-				this.paint = new Paint(robotMovement._enemyWaves, robotMovement._myLocation);
-				}*/
 			this.paint = new Paint();
 		}
 
 	}
 
-	/*
-	 * public SPLRobot(boolean GFTmovement, boolean waveSurfing, boolean
-	 * linearTargeting, boolean guessFactorTargeting) { if (GFTmovement){
-	 * this.movement= new GFTMovement(); } if (waveSurfing){ this.movement= new
-	 * WaveSurfing(); } if (linearTargeting){ this.targeting= new LinearTargeting();
-	 * } if (guessFactorTargeting){ this.targeting= new GuessFactorTargeting() ; } }
-	 * 
-	 */
 
 	public void run() {
 

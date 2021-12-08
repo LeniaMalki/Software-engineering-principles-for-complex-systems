@@ -16,6 +16,9 @@ public class MovementFactory {
 		if (c.getProperty("WaveSurfing")) {
 			return new WaveSurfing();
 		}
+		if (c.getProperty("Trigger")) {
+			return new TriggerMovement();
+		}
 		return null;
 		
 	}

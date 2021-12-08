@@ -42,9 +42,6 @@ public class SPLRobot extends AdvancedRobot {
 		if (c.getProperty("ConstantRotation")) {
 			this.radar = new ConstantRotation();
 		}
-		if (c.getProperty("Trigger")) {
-			this.movement = new TriggerMovement();
-		}
 		if (c.getProperty("PaintWaves")) {
 			this.paint = new Paint();
 		}
